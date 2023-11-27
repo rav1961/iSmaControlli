@@ -12,7 +12,7 @@
     "prettier:check": "prettier ./src --check",
     "prettier:fix": "prettier ./src --write",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "dependencies": {
     "jest-environment-jsdom": "^29.7.0",
