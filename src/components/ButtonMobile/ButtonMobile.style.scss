@@ -1,0 +1,17 @@
+.mobile-button {
+  @apply fixed left-1/2 -translate-x-1/2 bottom-8 bg-yellow w-16 h-16 border-none rounded-full z-20 
+      cursor-pointer p-0 m-0 lg:hidden;
+
+  &__line {
+    @apply absolute left-1/2 top-1/2 h-0 border-1 border-black w-[34px] -translate-x-1/2 transition-all opacity-100
+        first:-translate-x-1/2 first:-translate-y-[8px]
+        last:-translate-x-1/2 last:translate-y-[8px];
+  }
+
+  &--open {
+    .mobile-button__line {
+      @apply opacity-0 first:-translate-x-1/2 first:translate-y-1/2 first:-rotate-45 first:opacity-100
+          last:-translate-x-1/2 last:translate-y-1/2 last:rotate-45 last:opacity-100;
+    }
+  }
+}

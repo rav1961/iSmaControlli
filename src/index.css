@@ -44,8 +44,8 @@
   }
 
   nav {
-    @apply bg-navy-900 p-4 overflow-y-hidden pt-10 px-5
-              lg:sticky lg:top-0 lg:h-screen lg:pt-8 lg:px-10 lg:w-[420px];
+    @apply bg-navy-900 p-4 overflow-y-hidden px-5 
+        lg:sticky lg:top-0 lg:h-screen lg:pt-[43px] lg:px-10 lg:w-[420px];
   }
 
   main {
