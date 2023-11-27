@@ -1,4 +1,5 @@
 node_modules
 dist
 build
+support
 *.config.{js,json,cjs,ts}
