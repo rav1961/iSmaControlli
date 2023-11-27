@@ -45,12 +45,12 @@
 
   nav {
     @apply bg-navy-900 p-4 overflow-y-hidden px-5 
-        lg:sticky lg:top-0 lg:h-screen lg:pt-[43px] lg:px-10 lg:w-[420px];
+        lg:sticky lg:top-0 lg:h-screen lg:pt-[2.688rem] lg:px-10 lg:w-[26.25rem];
   }
 
   main {
-    @apply flex flex-col flex-1 px-5 pt-[27px]
-              lg:pt-[43px] lg:pr-8 lg:pb-0 lg:pl-0 lg:gap-8;
+    @apply flex flex-col flex-1 px-5 pt-[1.688rem]
+              lg:pt-[2.688rem] lg:pr-10 lg:pb-0 lg:pl-0 lg:gap-8;
   }
 
   footer {

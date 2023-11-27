@@ -3,9 +3,9 @@
       cursor-pointer p-0 m-0 lg:hidden;
 
   &__line {
-    @apply absolute left-1/2 top-1/2 h-0 border-1 border-black w-[34px] -translate-x-1/2 transition-all opacity-100
-        first:-translate-x-1/2 first:-translate-y-[8px]
-        last:-translate-x-1/2 last:translate-y-[8px];
+    @apply absolute left-1/2 top-1/2 h-0 border-1 border-black w-[2.125rem] -translate-x-1/2 transition-all opacity-100
+        first:-translate-x-1/2 first:-translate-y-2
+        last:-translate-x-1/2 last:translate-y-2;
   }
 
   &--open {

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { FormSearchPropsType } from './FormSearch.type';
 import type { ChangeEvent } from 'react';
+import { PLACEHOLDER_SEARCH_FORM } from '../../consts/labels';
 
 const FormSearch = ({ searchModeHandle }: FormSearchPropsType) => {
   const [searchValue, setSearchValue] = useState<string>('');
@@ -40,13 +41,13 @@ const FormSearch = ({ searchModeHandle }: FormSearchPropsType) => {
       </svg>
       <input
         type="search"
-        placeholder="Search points"
+        placeholder={PLACEHOLDER_SEARCH_FORM}
         value={searchValue}
         onChange={searchHandle}
-        className="m-0 w-full bg-navy-700 rounded-[10px] text-yellow text-lg font-normal 
-          bg-search bg-no-repeat bg-[20px] focus-within:outline-none 
+        className="m-0 w-full bg-navy-700 rounded-[0.625rem] text-yellow text-lg font-normal 
+          bg-search bg-no-repeat bg-[1.25rem] focus-within:outline-none 
           placeholder:text-navy-400 placeholder:text-lg placeholder:font-normal
-          py-[14px] pl-[60px] px-[19px]"
+          py-[0.875rem] pl-[3.75rem] px-[1.188rem]"
       />
     </form>
   );
