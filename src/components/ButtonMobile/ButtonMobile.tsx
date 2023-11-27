@@ -24,7 +24,12 @@ const ButtonMobile = ({ clickHandler }: ButtonMobilePropsType) => {
   }, [clickHandler, width]);
 
   return (
-    <button className={`mobile-button ${isOpen && 'mobile-button--open'}`} onClick={toggleMenu}>
+    <button
+      role="button"
+      aria-label="Toggle menu"
+      className={`mobile-button ${isOpen && 'mobile-button--open'}`}
+      onClick={toggleMenu}
+    >
       <span className="mobile-button__line"></span>
       <span className="mobile-button__line"></span>
       <span className="mobile-button__line"></span>
