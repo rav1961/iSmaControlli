@@ -7,7 +7,11 @@ const Layout = ({ header, children }: LayoutPropsType) => {
     <>
       <Navigation />
       <main>
-        {header && <h1 className="font-light mb-0 text-[1.75rem] lg:text-[2.375rem]">{header}</h1>}
+        {header && (
+          <h1 className="font-light mb-0 text-[1.75rem] mb-4 lg:text-[2.375rem] lg:mb-0">
+            {header}
+          </h1>
+        )}
         <section
           className="flex flex-col gap-4 p-4 border-1 border-navy-500 rounded-[0.625rem]
             bg-navy-900 lg:gap-8 lg:max-w-6xl lg:px-[1.75rem] lg:p-8"

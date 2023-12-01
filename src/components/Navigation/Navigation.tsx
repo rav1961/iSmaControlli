@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import { ButtonMobile } from '../ButtonMobile';
 import { FormSearch } from '../FormSearch';
 import { Logo } from '../Logo';
+import { ButtonMobile } from '../ButtonMobile';
+import { EquipmentList } from '../Equipment';
 
 const Navigation = () => {
   const [isOpenMenu, setOpenMenu] = useState<boolean>(false);
   const [isSearchMode, setIsSearchMode] = useState<boolean>(false);
-
-  console.log(isSearchMode);
 
   const toggleMenuHandler = (val: boolean): void => {
     setOpenMenu(val);
@@ -21,9 +20,9 @@ const Navigation = () => {
     <nav>
       <div>
         <Logo />
-        <div className={`mt-7 lg:block ${isOpenMenu ? '' : 'hidden'}`}>
+        <div className={`mt-4 lg:block lg:mt-7 ${isOpenMenu ? '' : 'hidden'}`}>
           <FormSearch searchModeHandle={toggleSearchHandler} />
-          {/* <NavigationList /> */}
+          <EquipmentList isSearchMode={isSearchMode} />
         </div>
       </div>
       <ButtonMobile clickHandler={toggleMenuHandler} />

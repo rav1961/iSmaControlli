@@ -1,9 +1,16 @@
 import { useLayoutEffect, useState } from 'react';
 
+const LG_WIDTH: number = 1024;
+
 const getWindowSize = () => {
   const { innerWidth: width } = window;
+  let isMobile = false;
 
-  return { width };
+  if (width) {
+    isMobile = LG_WIDTH >= width;
+  }
+
+  return { width, isMobile };
 };
 
 const useWindowSize = () => {

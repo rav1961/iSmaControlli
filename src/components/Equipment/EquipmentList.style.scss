@@ -1,0 +1,47 @@
+.nav-list {
+  @apply text-lg text-white font-normal;
+
+  &__li {
+    @apply mb-0;
+
+    &.open {
+      > .point-name {
+        @apply bg-nav-gradient border-none rounded-[10px];
+      }
+    }
+  }
+
+  &__sub {
+    @apply hidden ml-6 mt-0 text-white text-lg mb-4;
+
+    &--small {
+      @apply text-navy-100 text-base mb-4;
+    }
+
+    &-li {
+      @apply mb-0;
+
+      &.open {
+        &:has(.open) {
+          > .point-name {
+            @apply text-white;
+          }
+        }
+      }
+    }
+  }
+
+  .open {
+    > .nav-list__sub {
+      @apply block;
+    }
+  }
+}
+
+.point-name {
+  @apply block relative cursor-pointer px-5 py-3 select-none;
+
+  &--select {
+    @apply text-yellow;
+  }
+}
