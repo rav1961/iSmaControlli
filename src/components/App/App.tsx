@@ -1,10 +1,13 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from '../../layouts';
-import { Suspense, lazy } from 'react';
+import { Suspense } from 'react';
+import DataPointsPage from 'src/pages/DataPointsPage';
+import SearchPage from 'src/pages/SearchPage';
+import NotFoundPage from 'src/pages/NotFoundPage';
 
-const DataPointsPage = lazy(() => import('../../pages/DataPointsPage'));
-const SearchPage = lazy(() => import('../../pages/SearchPage'));
-const NotFoundPage = lazy(() => import('../../pages/NotFoundPage'));
+// const DataPointsPage = lazy(() => import('../../pages/DataPointsPage'));
+// const SearchPage = lazy(() => import('../../pages/SearchPage'));
+// const NotFoundPage = lazy(() => import('../../pages/NotFoundPage'));
 
 function App() {
   return (
