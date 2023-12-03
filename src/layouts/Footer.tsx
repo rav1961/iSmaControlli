@@ -1,4 +1,4 @@
-const Footer = () => {
+export const Footer = () => {
   return (
     <footer className="text-right">
       <svg
@@ -81,5 +81,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

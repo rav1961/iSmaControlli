@@ -1,23 +1,16 @@
-import { useQuery } from 'react-query';
-import { getEquipments } from '../../api/getEquipments';
-import { parseToArray } from '../../api/parser';
+import { Link } from 'react-router-dom';
+import { useDriverData } from '../../contexts';
+import './EquipmentList.style.scss';
+
 import type { EquipmentType } from '../../api/getEquipments.type';
 import type { MouseEvent } from 'react';
-import './EquipmentList.style.scss';
 
 type EquipmentListPropsType = {
   isSearchMode: boolean;
 };
 
 const EquipmentList = ({ isSearchMode }: EquipmentListPropsType) => {
-  const { data, isError, error } = useQuery('equipments', getEquipments, {
-    select: parseToArray,
-    refetchInterval: 1000
-  });
-
-  if (isError) {
-    return <p>Error: {error as string}</p>;
-  }
+  const { data } = useDriverData();
 
   const buildList = (id: string, equipments: EquipmentType[], depth: number = 1) => {
     const children = equipments.filter((equipment: EquipmentType) => equipment.equipRef === id);
@@ -29,14 +22,14 @@ const EquipmentList = ({ isSearchMode }: EquipmentListPropsType) => {
     return (
       <ul className={`nav-list__sub ${depth > 1 ? 'nav-list__sub--small' : null}`}>
         {children.map((nestedEquipment) => (
-          <li
-            key={nestedEquipment.id}
-            data-equipment={nestedEquipment.id}
-            className="nav-list__sub-li"
-          >
-            <span className="point-name" onClick={selectEquipmentHandler}>
+          <li key={nestedEquipment.id} className="nav-list__sub-li">
+            <Link
+              to={`/${nestedEquipment.id}`}
+              className="point-name"
+              onClick={selectEquipmentHandler}
+            >
               {nestedEquipment.dis}
-            </span>
+            </Link>
             {buildList(nestedEquipment.id, equipments, ++depth)}
           </li>
         ))}
@@ -44,9 +37,7 @@ const EquipmentList = ({ isSearchMode }: EquipmentListPropsType) => {
     );
   };
 
-  const selectEquipmentHandler = (e: MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-
+  const selectEquipmentHandler = (e: MouseEvent<HTMLAnchorElement>) => {
     const currentItem = e.currentTarget;
     const generalList = currentItem.closest('ul');
 
@@ -70,14 +61,14 @@ const EquipmentList = ({ isSearchMode }: EquipmentListPropsType) => {
         <p className="text-lg">Number of matches found: x</p>
       ) : (
         <ul className="nav-list">
-          {(data as EquipmentType[])
+          {data
             ?.filter((item) => !item.equipRef)
             .map((item) => (
-              <li key={item.id} className="nav-list__li" data-equipment={item.id}>
-                <span className="point-name" onClick={selectEquipmentHandler}>
+              <li key={item.id} className="nav-list__li">
+                <Link to={`/${item.id}`} className="point-name" onClick={selectEquipmentHandler}>
                   {item.dis}
-                </span>
-                {buildList(item.id, data as EquipmentType[])}
+                </Link>
+                {buildList(item.id, data)}
               </li>
             ))}
         </ul>

@@ -1,15 +1,25 @@
-import { LABEL_NOT_FOUND } from '../../consts/labels';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from '../../layouts';
-import { EquipmentGroup } from '../Equipment';
-import { Message } from '../Message';
+import { Suspense, lazy } from 'react';
+
+const DataPointsPage = lazy(() => import('../../pages/DataPointsPage'));
+const SearchPage = lazy(() => import('../../pages/SearchPage'));
+const NotFoundPage = lazy(() => import('../../pages/NotFoundPage'));
 
 function App() {
-  const data: boolean = true;
-
   return (
-    <Layout header={`Piwnica`}>
-      {data ? <EquipmentGroup /> : <Message txt={LABEL_NOT_FOUND} />}
-    </Layout>
+    <BrowserRouter>
+      <Suspense>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<DataPointsPage />} />
+            <Route path="/:equipment" element={<DataPointsPage />} />
+            <Route path="search" element={<SearchPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 

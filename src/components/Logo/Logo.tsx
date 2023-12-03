@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom';
+
 const Logo = () => {
   return (
-    <a href="/" title="nano EDGE ENGINE - iSMA Controlli">
+    <Link to="/" title="nano EDGE ENGINE - iSMA Controlli">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="155"
@@ -77,7 +79,7 @@ const Logo = () => {
           </clipPath>
         </defs>
       </svg>
-    </a>
+    </Link>
   );
 };
 
