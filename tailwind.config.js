@@ -16,9 +16,6 @@ export default {
         yellow: '#F7B818',
         white: '#FFFFFF'
       },
-      fontFamily: {
-        sans: 'Poppins, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"'
-      },
       backgroundImage: {
         'box-gradient': `linear-gradient(255deg, #3A4667 0%, rgba(58, 70, 103, 0.00) 112.11%)`,
         'nav-gradient': `linear-gradient(270deg, #2254C7 1.73%, rgba(34, 84, 199, 0.00) 96.53%)`
