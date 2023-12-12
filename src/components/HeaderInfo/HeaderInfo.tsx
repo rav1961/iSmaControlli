@@ -3,7 +3,6 @@ type HeaderInfoPropsType = {
 };
 
 const HeaderInfo = ({ header }: HeaderInfoPropsType) => {
-  console.log('x');
   if (!header) {
     return null;
   }
